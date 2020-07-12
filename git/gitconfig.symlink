@@ -1,6 +1,9 @@
 # Local/private config goes in the include
 [include]
         path = ~/.gitconfig.local
+[user]
+	name = Dinesh Gadge
+	email = dinesh@dineshgadge.com
 [hub]
         protocol = https
 [alias]
@@ -9,20 +12,28 @@
         wtf     = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
+        push-all = "!git checkout master; git push; git checkout develop; git push; git push --tags"
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [color]
         diff = auto
         status = auto
         branch = auto
         ui = true
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
+        excludesfile = ~/.gitignore_global
+        editor = code -w
 [apply]
         whitespace = nowarn
 [mergetool]
         keepBackup = false
 [difftool]
         prompt = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 [help]
         autocorrect = 1
 [push]
@@ -33,3 +44,8 @@
         default = simple
 [credential]
 	helper = osxkeychain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
