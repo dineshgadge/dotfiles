@@ -1,4 +1,4 @@
-unalias rr
+# unalias rr
 rr () {
   echo "Reloading RVM"
   source ~/.rvm/scripts/rvm

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+du -s * | sort -nrk 1 | cut -f 2 | sed "s/'/\\\'/g" | xargs -I "{}" du -sh "{}"
