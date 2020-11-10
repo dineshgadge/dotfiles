@@ -22,3 +22,6 @@ alias gb='git branch'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
+
+alias gfhs='git flow hotfix start $(date "+%Y%m%d%H%M%S")'
+alias gfrs='git flow release start $(date "+%Y%m%d%H%M%S")'
