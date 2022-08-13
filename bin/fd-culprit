@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Usage: fd-culprit
+#
+# Lists the culprits for "Too many open file descriptors" error on mac
+#
+
+lsof | awk '{ print $2 " " $1; }' | sort -rn | uniq -c | sort -rn | head -20

@@ -13,6 +13,7 @@
         rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
         push-all = "!git checkout master; git push; git checkout develop; git push; git push --tags"
+        push-all-main = "!git checkout main; git push; git checkout develop; git push; git push --tags"
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
         uat-merge-and-push = "!git checkout uat; git pull; git merge develop; git push; git checkout develop"
 [color]
@@ -52,3 +53,9 @@
 	required = true
 [commit]
 	template = /Users/dinesh/.stCommitMsg
+
+[init]
+  defaultBranch = main
+
+[pull]
+  rebase = false

@@ -48,3 +48,15 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+
+CORRECT_IGNORE_FILE="spring"
+
+[ -s "/Users/dinesh/.jabba/jabba.sh" ] && source "/Users/dinesh/.jabba/jabba.sh"
+# source ~/.iterm2_shell_integration.zsh
+
+# export PS1=1mdinesh$reset_color:$fg[blue]~/$reset_color $(git_prompt_info)$ %{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[blue]%}%B%c/%b%{$reset_color%} $(git_prompt_info)%(!.#.$)
+export NCOLOR=magenta
+#export PS1="%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[blue]%}%B%c/%b%{$reset_color%} $(git_prompt_info)%(\!.#.$) "
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
