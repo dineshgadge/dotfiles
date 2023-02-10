@@ -9,9 +9,9 @@
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
+        wtf = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
-        count   = !git shortlog -sn
+        count = !git shortlog -sn
         push-all = "!git checkout master; git push; git checkout develop; git push; git push --tags"
         push-all-main = "!git checkout main; git push; git checkout develop; git push; git push --tags"
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -32,7 +32,7 @@
         prompt = false
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -59,3 +59,5 @@
 
 [pull]
   rebase = false
+[gc]
+	autoDetach = false
