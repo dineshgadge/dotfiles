@@ -89,3 +89,5 @@ export PATH=/Users/dinesh/.opencode/bin:$PATH
 # opencode
 export PATH=/Users/dinesh/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
+
+eval "$(zoxide init zsh)"
